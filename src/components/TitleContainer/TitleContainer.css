@@ -1,0 +1,36 @@
+.title-container {
+    position: relative; 
+    z-index: 1100;
+  }
+  
+  .title {
+    color: white;
+  }
+  
+  .favorites-page {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container-name {
+    position: relative;
+    z-index: 1000;
+    margin-left: 25px;
+    display: flex;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card-container-favorites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .pad {
+    margin-bottom: 125px;
+  } 

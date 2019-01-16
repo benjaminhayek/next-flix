@@ -1,0 +1,127 @@
+.title-card, 
+.background,
+.foreground,
+.poster {
+  height: 200px;
+  width: 343px;
+}
+
+.title-card {
+  position: relative;
+  margin: 6px;
+}
+
+.background {
+  background-color: black;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.foreground {
+  background-color:rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 2;
+  color: white;
+  display: grid;
+  grid-template-columns: 89% 11%;
+}
+
+.player {
+  bottom: 165px;
+  position: relative;
+  right: 90px;
+  width: 520px;
+  height: 530px;
+  pointer-events: none;
+  background-color: black;
+}
+
+.info-section {
+  display: flex;
+  align-items: flex-end;
+  opacity: 1;
+  padding: 0 10px 0 10px;
+}
+
+.title-page-link {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.info-section:hover {
+  opacity: 0;
+  transition: 4s;
+}
+
+.rating {
+  font-weight: bold;
+  color: rgb(18, 192, 18);
+}
+
+.mpaa {
+  border: 1px solid white;
+  padding: 2px 4px 2px 4px;
+  margin: 0 8px 0 8px;
+}
+
+.favorite-btn {
+  cursor: pointer;
+  opacity: 1;
+  height: 25px;
+  margin-top: 10px;
+}
+
+.fade {
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
+}
+
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
