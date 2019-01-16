@@ -41,10 +41,12 @@ export const fetchData = async (url) => {
   }
   
   export const removeFavorite = async (movie, url) => {
+    console.log(movie.movie_id)
+    console.log(url)
     try {
       const response = await fetch(url, {
         method: 'DELETE',
-        body: JSON.stringify({ movie_id: movie.movie_id, user_id: movie.userId }),
+        body: JSON.stringify({ movie_id: movie.movie_id, user_id: movie.user_id }),
         credentials: "same-origin",
         headers: {
           "Content-Type": "application/json"

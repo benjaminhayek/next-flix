@@ -74,7 +74,7 @@ export const addUser = async (name, email, password) => {
 export const getUser = async (email, password) => {
   const url = 'https://mt-backend.herokuapp.com/api/users'
   const response = await fetchData(url);
-  const matchingUser = response.data.find(user => user.email === email && user.password === password)
+  const matchingUser = response.find(user => user.email === email && user.password === password)
   if(matchingUser) {
     const favorites = await getFavorites(matchingUser.id)
     const user = {...matchingUser, favorites}
@@ -85,20 +85,19 @@ export const getUser = async (email, password) => {
 } 
 
 export const getFavorites = async (id) => {
-  const url = `'https://mt-backend.herokuapp.com/api/users/${id}/favorites`
+  const url = `https://mt-backend.herokuapp.com/api/users/${id}/favorites`
   const response = await fetchData(url)
-  return response.data 
+  return response
 }
 
 export const checkFavorites = async (movie) => {
   const favorites = await getFavorites(movie.user_id)
   const favoriteId = favorites.map(favorite => favorite.movie_id)
   if (favoriteId.includes(movie.movie_id)){
-    const url = `'https://mt-backend.herokuapp.com/api/users/${movie.user_id}/favorites/${movie.movie_id}`
-    console.log(url)
+    const url = `https://mt-backend.herokuapp.com/api/users/${movie.user_id}/favorites/${movie.movie_id}`
     await removeFavorite(movie, url)
   } else {
-    const url = `'https://mt-backend.herokuapp.com/api/favorites/new`
+    const url = `https://mt-backend.herokuapp.com/api/users/favorites/new`
     await addFavorite(movie, url)
   }
   const newFavorites = await getFavorites(movie.user_id)

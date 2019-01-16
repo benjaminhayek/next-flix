@@ -36,7 +36,7 @@ export class TitleCard extends Component {
       title: this.props.title,
       poster_path: this.props.poster,
       release_date: this.props.release,
-      vote_average: this.props.rating,
+      vote_average: this.props.rating.toString(),
       overview: this.props.overview,
     }
     this.props.controlFavorites(movie)
